@@ -7,97 +7,92 @@
 
 <style>
 body{
-    margin:0;
-    font-family: Arial, sans-serif;
-    color:white;
-    text-align:center;
+margin:0;
+font-family: Arial, sans-serif;
+color:white;
+text-align:center;
 
-    /* FONDO */
-    background-image: url("logo4.jpg");
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
+background-image:url("logo4.jpg");
+background-size:cover;
+background-position:center;
+background-attachment:fixed;
 }
 
-/* Oscurecer ligeramente el fondo */
 body::before{
-    content:"";
-    position:fixed;
-    top:0;
-    left:0;
-    width:100%;
-    height:100%;
-    background:rgba(0,0,0,0.65);
-    z-index:-1;
+content:"";
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.65);
+z-index:-1;
 }
 
 h1{
-    margin-top:40px;
+margin-top:40px;
 }
 
-/* CONTENEDOR CENTRADO */
 .container{
-    margin-top:60px;
-    display:flex;
-    flex-direction:column;
-    align-items:center;
+margin-top:60px;
+display:flex;
+flex-direction:column;
+align-items:center;
 }
 
-/* TARJETAS BLANCAS PARA LOS LOGOS */
 .logo-card{
-    background: rgba(255,255,255,0.95);
-    padding:25px;
-    border-radius:25px;
-    margin:30px;
-    cursor:pointer;
-    transition:0.3s;
-    box-shadow:0 15px 35px rgba(0,0,0,0.5);
+background:rgba(255,255,255,0.95);
+padding:25px;
+border-radius:25px;
+margin:30px;
+cursor:pointer;
+transition:0.3s;
+box-shadow:0 15px 35px rgba(0,0,0,0.5);
 }
 
 .logo-card img{
-    width:340px;     /* MÁS GRANDE */
-    max-width:90%;
-    display:block;
+width:340px;
+max-width:90%;
+display:block;
 }
 
 .logo-card:hover{
-    transform:scale(1.07);
+transform:scale(1.07);
 }
 
-/* MODAL */
 .modal{
-    display:none;
-    position:fixed;
-    top:0;
-    left:0;
-    width:100%;
-    height:100%;
-    background:rgba(0,0,0,0.85);
-    overflow:auto;
+display:none;
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.85);
+overflow:auto;
 }
 
 .modal-content{
-    background:white;
-    color:black;
-    width:90%;
-    max-width:700px;
-    margin:50px auto;
-    padding:25px;
-    border-radius:15px;
-    text-align:left;
+background:white;
+color:black;
+width:90%;
+max-width:700px;
+margin:50px auto;
+padding:25px;
+border-radius:15px;
+text-align:left;
 }
 
 .modal-content img{
-    width:100%;
-    margin:15px 0;
-    border-radius:10px;
+width:100%;
+margin:15px 0;
+border-radius:10px;
 }
 
 .close{
-    float:right;
-    cursor:pointer;
-    font-weight:bold;
-    font-size:20px;
+float:right;
+cursor:pointer;
+font-weight:bold;
+font-size:20px;
 }
 </style>
 </head>
@@ -108,128 +103,225 @@ h1{
 
 <div class="container">
 
-    <div class="logo-card" onclick="openModal('dsi')">
-        <img src="logosn/logo1.jpg">
-    </div>
+<div class="logo-card" onclick="openModal('dsi')">
+<img src="logosn/logo1.jpg">
+</div>
 
-    <div class="logo-card" onclick="openModal('3ds')">
-        <img src="logosn/logo2.jpg">
-    </div>
+<div class="logo-card" onclick="openModal('3ds')">
+<img src="logosn/logo2.jpg">
+</div>
 
-    <div class="logo-card" onclick="openModal('wii')">
-        <img src="logosn/logo3.jpg">
-    </div>
+<div class="logo-card" onclick="openModal('wii')">
+<img src="logosn/logo3.jpg">
+</div>
 
 </div>
 
 <div id="modal" class="modal">
-    <div class="modal-content">
-        <span class="close" onclick="closeModal()">X</span>
-        <div id="modal-text"></div>
-    </div>
+<div class="modal-content">
+<span class="close" onclick="closeModal()">X</span>
+<div id="modal-text"></div>
+</div>
 </div>
 
 <script>
 function openModal(type){
-    let text = "";
 
-    if(type === "dsi"){
-    text = `
-    <h2>Nintendo DSi Instructions</h2>
+let text="";
 
-    <h3>Play DSi Games</h3>
+if(type==="dsi"){
+text=`<h2>Nintendo DSi Instructions</h2>
 
-    <h4>Step 1</h4>
-    <p>Power on your DSi and wait until the system finishes loading all files.</p>
-    <img src="stepsdsi/stepsndsi1.jpg">
+<h3>Play DSi Games</h3>
 
-    <h4>Step 2</h4>
-    <p>Go to the <strong>roms</strong> folder.</p>
-    <img src="stepsdsi/stepsndsi2.jpg">
+<h4>Step 1</h4>
+<p>Power on your DSi and wait until the system finishes loading.</p>
+<img src="stepsdsi/stepsndsi1.jpg">
 
-    <h4>Step 3</h4>
-    <p>You will see all available games. Select a game and play.</p>
-    <img src="stepsdsi/stepsndsi3.jpg">
+<h4>Step 2</h4>
+<p>Go to the <strong>roms</strong> folder.</p>
+<img src="stepsdsi/stepsndsi2.jpg">
 
-    <h4>Step 4</h4>
-    <p>If you want to play a different game, press the <strong>Power button once</strong> to return to the home menu.</p>
-    <img src="stepsdsi/stepsndsi4.jpg">
+<h4>Step 3</h4>
+<p>Select a game and start playing.</p>
+<img src="stepsdsi/stepsndsi3.jpg">
 
-    <h4>Step 5</h4>
-    <p>Select another game. If games do not appear, repeat Step 1. 
-    (Do NOT hold the Power button.)</p>
-    <img src="stepsdsi/stepsndsi5.jpg">
+<h4>Step 4</h4>
+<p>Press the Power button once to return to the menu.</p>
+<img src="stepsdsi/stepsndsi4.jpg">
 
-    <hr>
+<h4>Step 5</h4>
+<p>Select another game.</p>
+<img src="stepsdsi/stepsndsi5.jpg">
 
-    <h3>Play GBA Games</h3>
+<hr>
 
-    <h4>Step 6</h4>
-    <p>Go to the <strong>roms</strong> folder and open the <strong>gba</strong> folder.</p>
-    <img src="stepsdsi/stepsndsi6.jpg">
+<h3>Play GBA Games</h3>
 
-    <h4>Step 7</h4>
-    <p>Select a GBA game and start playing.</p>
-    <img src="stepsdsi/stepsndsi7.jpg">
+<img src="stepsdsi/stepsndsi6.jpg">
+<img src="stepsdsi/stepsndsi7.jpg">
+<img src="stepsdsi/stepsndsi8.jpg">
+<img src="stepsdsi/stepsndsi9.jpg">
+<img src="stepsdsi/stepsndsi10.jpg">
+<img src="stepsdsi/stepsndsi11.jpg">
+<img src="stepsdsi/stepsndsi12.jpg">
 
-    <h4>Step 8</h4>
-    <p>To change the GBA game, tap the touchscreen once to open the GBA options menu.</p>
-    <img src="stepsdsi/stepsndsi8.jpg">
+<hr>
 
-    <h4>Step 9</h4>
-    <p>Select <strong>"Quit to rom browser"</strong>.</p>
-    <img src="stepsdsi/stepsndsi9.jpg">
+<h3>Play Original DS Cartridge</h3>
 
-    <h4>Step 10</h4>
-    <p>Select the <strong>"roms"</strong> folder.</p>
-    <img src="stepsdsi/stepsndsi10.jpg">
-
-    <h4>Step 11</h4>
-    <p>Open the <strong>"gba"</strong> folder again to reload all GBA games.</p>
-    <img src="stepsdsi/stepsndsi11.jpg">
-
-    <h4>Step 12</h4>
-    <p>Select another GBA game and play.</p>
-    <img src="stepsdsi/stepsndsi12.jpg">
-
-    <p>To return to the main menu, press the <strong>Power button once</strong>. 
-    Holding the Power button will turn off the DSi completely.</p>
-
-    <hr>
-
-    <h3>Play Original DS Game Cartridge</h3>
-
-    <h4>Step 13</h4>
-    <p>Turn on your DSi and press the <strong>Select</strong> button.</p>
-    <img src="stepsdsi/stepsndsi13.jpg">
-
-    <h4>Step 14</h4>
-    <p>Wait until the DS Lite menu loads.</p>
-    <img src="stepsdsi/stepsndsi14.jpg">
-
-    <h4>Step 15</h4>
-    <p>Insert your original game into the DS game slot. Your game is ready to play.</p>
-    <img src="stepsdsi/stepsndsi15.jpg">
-
-    <p><strong>Tip:</strong> If the screen stays black after pressing the Select button,
-    press the Power button once to return to the main menu and try again.</p>
-    `;
+<img src="stepsdsi/stepsndsi13.jpg">
+<img src="stepsdsi/stepsndsi14.jpg">
+<img src="stepsdsi/stepsndsi15.jpg">
+`;
 }
 
-    if(type === "3ds"){
-        text = `<h2>Nintendo 3DS Instructions</h2><p>Coming soon...</p>`;
-    }
+if(type==="wii"){
+text=`<h2>Wii Instructions</h2>
 
-    if(type === "wii"){
-        text = `<h2>Wii Instructions</h2><p>Coming soon...</p>`;
-    }
+<h3>Play Games from USB</h3>
 
-    document.getElementById("modal-text").innerHTML = text;
-    document.getElementById("modal").style.display = "block";
+<h4>Step 1</h4>
+<p>Turn on the Wii and press A.</p>
+<img src="stepswii/wii1.jpg">
+
+<p>Select Configurable USB Loader.</p>
+<img src="stepswii/wii2.jpg">
+
+<h4>Step 2</h4>
+<p>Wait until games load.</p>
+<img src="stepswii/wii3.jpg">
+
+<h4>Step 3</h4>
+<p>Select a game and press Start.</p>
+<img src="stepswii/wii4.jpg">
+
+<p>Enjoy your game.</p>
+<img src="stepswii/wii5.jpg">
+
+<h4>Change Game</h4>
+
+<img src="stepswii/wii6.jpg">
+<img src="stepswii/wii7.jpg">
+<img src="stepswii/wii8.jpg">
+
+<hr>
+
+<h3>If USB Loader does not load</h3>
+
+<img src="stepswii/wii9.jpg">
+<img src="stepswii/wii10.jpg">
+<img src="stepswii/wii11.jpg">
+<img src="stepswii/wii12.jpg">
+
+<hr>
+
+<h3>Warning</h3>
+
+<p>Do not remove USB or SD card.</p>
+
+<img src="stepswii/wii13.jpg">
+<img src="stepswii/wii14.jpg">
+
+<p>USB must be connected in the correct port.</p>
+
+<img src="stepswii/wii15.jpg">
+`;
+}
+
+if(type==="3ds"){
+text=`<h2>Nintendo 3DS Instructions</h2>
+
+<h3>Delete Games using FBI</h3>
+
+<h4>Step 1</h4>
+<p>Open the FBI app.</p>
+<img src="steps3ds/3ds1.jpg">
+<img src="steps3ds/3ds2.jpg">
+
+<h4>Step 2</h4>
+<p>Select Titles.</p>
+<img src="steps3ds/3ds3.jpg">
+
+<h4>Step 3</h4>
+<p>Select the game and choose Delete Title and Ticket.</p>
+<img src="steps3ds/3ds4.jpg">
+<img src="steps3ds/3ds5.jpg">
+
+<hr>
+
+<h3>Internet Connection</h3>
+
+<h4>Step 1</h4>
+<p>Open System Settings.</p>
+<img src="steps3ds/3ds6.jpg">
+
+<h4>Step 2</h4>
+<p>Select Internet Settings.</p>
+<img src="steps3ds/3ds7.jpg">
+
+<h4>Step 3</h4>
+<p>Select Connection Settings and create a new connection.</p>
+<img src="steps3ds/3ds8.jpg">
+<img src="steps3ds/3ds9.jpg">
+
+<hr>
+
+<h3>Download Games using HShop</h3>
+
+<h4>Step 1</h4>
+<p>Open HShop.</p>
+<img src="steps3ds/3ds10.jpg">
+
+<h4>Step 2</h4>
+<p>Select category.</p>
+<img src="steps3ds/3ds11.jpg">
+
+<h4>Step 3</h4>
+<p>Select region. Any region had games and you can download and plays as well</p>
+<img src="steps3ds/3ds12.jpg">
+
+<h4>Step 4</h4>
+<p>Select the game and download.</p>
+<img src="steps3ds/3ds13.jpg">
+<img src="steps3ds/3ds14.jpg">
+
+<p>Wait until download finishes.</p>
+<img src="steps3ds/3ds15.jpg">
+
+<hr>
+
+<h3>Install Themes with ANEMONE</h3>
+
+<h4>Step 1</h4>
+<p>Open ANEMONE.</p>
+<img src="steps3ds/3ds16.jpg">
+
+<h4>Step 2</h4>
+<p>Search Theme Plaza.</p>
+<img src="steps3ds/3ds17.jpg">
+<img src="steps3ds/3ds18.jpg">
+
+<h4>Step 3</h4>
+<p>Scan QR code.</p>
+<img src="steps3ds/3ds19.jpg">
+<img src="steps3ds/3ds20.jpg">
+
+<p>Install the theme.</p>
+<img src="steps3ds/3ds21.jpg">
+<img src="steps3ds/3ds22.jpg">
+
+<p>Restart console.</p>
+<img src="steps3ds/3ds23.jpg">
+`;
+}
+
+document.getElementById("modal-text").innerHTML=text;
+document.getElementById("modal").style.display="block";
 }
 
 function closeModal(){
-    document.getElementById("modal").style.display = "none";
+document.getElementById("modal").style.display="none";
 }
 </script>
 
